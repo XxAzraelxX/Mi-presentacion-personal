@@ -43,6 +43,7 @@ El proyecto está estructurado de la siguiente manera:
 ## Instrucciones de Uso
 
 Para ver este proyecto en tu navegador, solo tienes que abrir el archivo `index.html` en cualquier navegador moderno. Si deseas modificar el contenido, abre los archivos HTML o CSS en tu editor de texto preferido y realiza los cambios que necesites.
+https://xxazraelxx.github.io/mi-pagina-web/
 
 ### Requisitos
 
@@ -52,6 +53,7 @@ Este proyecto es completamente estático, por lo que no requiere un servidor ni 
 
 1. Clona o descarga este repositorio en tu máquina local.
 2. Abre el archivo `index.html` en tu navegador.
+Segunda opcion: https://xxazraelxx.github.io/mi-pagina-web/
 
 ## Contribuciones
 
