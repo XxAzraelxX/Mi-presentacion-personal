@@ -1,0 +1,292 @@
+/* Establece variables de color y estilo global */
+:root {
+  --color-primary: #111827;
+  --color-secondary: #6b7280;
+  --color-accent: #2563eb;
+  --color-bg: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 0.75rem;
+  --transition-speed: 0.3s;
+}
+
+/* Reseteo y base de estilos */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-primary);
+  line-height: 1.6;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+/* Estilo para enlaces */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+  color: #1e40af;
+  outline: none;
+}
+
+/* Estilos para el encabezado */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+header.scrolled {
+  background-color: #2563eb;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--color-primary);
+  user-select: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Estilos para el contenido */
+main {
+  max-width: 900px;
+  margin: 3rem auto 4rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5em 0;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em 0;
+  color: var(--color-secondary);
+}
+
+/* Estilos para secciones */
+section {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+/* Estilos para la sección Sobre mí */
+#about {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: space-between; /* Alineamos los elementos al lado */
+  align-items: center;
+  gap: 10rem; /* Espacio entre el texto y la foto */
+  text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+#about .about-text {
+  max-width: 70%; /* Limitar el ancho del texto para que la foto no se sobreponga */
+}
+
+#about p {
+  font-size: 1.125rem;
+  color: var(--color-secondary);
+  margin-top: 1.5rem;
+}
+
+/* Estilo para la foto de perfil */
+#about .photo {
+  flex-shrink: 0;
+  width: 220px; /* Tamaño reducido de la foto */
+  height: 220px; /* Tamaño reducido de la foto */
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--color-shadow);
+  overflow: hidden;
+  border: 4px solid var(--color-accent);
+  background: #f3f4f6;
+}
+
+#about .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Estilo para las tarjetas (cards) de logros y cursos */
+.card-link {
+  all: unset;
+  display: block;
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  padding: 1.5rem;
+  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); /* Añadimos una sombra más grande al hacer hover */
+  transform: translateY(-4px); /* Efecto de "desplazamiento hacia arriba" al pasar el cursor */
+  outline: none;
+}
+
+/* Añadir el mismo efecto a los enlaces (para los logros) */
+.card {
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  padding: 1.5rem;
+  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); /* Sombra adicional al hacer hover */
+  transform: translateY(-4px); /* Mismo efecto de movimiento en la tarjeta */
+}
+
+/* Estilos para las tarjetas de tecnologías */
+#technologies .tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-card {
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 6px var(--color-shadow);
+  padding: 1rem;
+  width: 110px;
+  text-align: center;
+  cursor: default;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.tech-card:hover,
+.tech-card:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+}
+
+.tech-card img {
+  max-width: 48px;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.tech-card span {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+/* Mejora de interactividad en imágenes */
+.header-title img {
+  width: 120px;  /* Ajustamos el tamaño del logo */
+  height: auto;  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  transition: filter var(--transition-speed);
+}
+
+.certificate img {
+  max-width: 100%; /* Hace que la imagen se ajuste al tamaño de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px var(--color-shadow);
+  border: 1px solid #ddd;
+}
+
+/* Botones de retorno */
+.btn-back {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+  transform: scale(1.05);
+  background-color: #1e40af;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.6);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
