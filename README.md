@@ -1,26 +1,36 @@
 # Mi Presentación Profesional
 
-Este es un proyecto personal desarrollado con el propósito de mostrar mi trayectoria profesional, educación, logros y habilidades tecnológicas. A través de esta página web, los visitantes pueden conocer más sobre mí, mi formación académica y los cursos que he realizado, además de las tecnologías que domino.
+Este es mi portafolio web personal, diseñado para mostrar mi trayectoria profesional, educación, logros, habilidades y contacto. El objetivo es ofrecer una experiencia moderna y accesible a cualquier persona interesada en conocer mi perfil profesional.
 
-## Descripción del Proyecto
+> **🌐 [¡Ver portafolio online aquí!](https://xxazraelxx.github.io/mi-pagina-web/)**
 
-El proyecto es una página web profesional de presentación personal, la cual tiene las siguientes secciones:
+---
 
-- **Sobre mí**: Una breve introducción sobre quién soy, mis habilidades y mi pasión por la tecnología.
-- **Educación**: Información sobre mi formación académica, incluyendo los títulos obtenidos y los cursos relevantes que he completado.
-- **Logros y Cursos**: Una lista de los logros obtenidos en diversos cursos, como Firebase, Oracle, .NET, Cisco, y más.
-- **Tecnologías que domino**: Una presentación visual de las tecnologías que he aprendido y utilizado, con sus respectivos logotipos.
+## 📋 Descripción del Proyecto
 
-## Tecnologías Usadas
+La web cuenta con las siguientes secciones principales:
 
-Este proyecto fue desarrollado utilizando las siguientes tecnologías:
+- **Sobre mí:** Presentación personal y breve resumen profesional.
+- **Educación:** Detalle de mi formación académica y títulos obtenidos.
+- **Logros y Cursos:** Certificaciones y cursos destacados (Firebase, Oracle, .NET, Cisco, Algar Tech, etc.).
+- **Tecnologías que domino:** Logos visuales de las tecnologías y lenguajes con los que trabajo.
+- **Formulario de contacto:** Envía mensajes directamente a mi correo de manera segura (usando Formspree).
+- **Descarga de CV:** Botón directo para descargar mi hoja de vida en PDF.
+- **Modo oscuro/claro:** Cambia el tema visual en tiempo real desde cualquier sección.
 
-- **HTML5**: Para la estructura y contenido de la página web.
-- **CSS3**: Para el diseño y estilos visuales, utilizando características modernas como transiciones, sombras y flexbox.
-- **JavaScript**: Para la interactividad y el manejo dinámico de la página (a través del archivo `script.js`).
-- **Git y GitHub**: Para el control de versiones y la gestión del repositorio de código fuente.
+---
 
-## Estructura del Proyecto
+## 🛠️ Tecnologías Usadas
+
+- **HTML5** — Estructura y contenido de la web.
+- **CSS3** — Diseño moderno, responsive y animaciones.
+- **JavaScript** — Interactividad, validación de formularios, modo oscuro, animaciones.
+- **Formspree** — Recepción segura de mensajes sin backend propio.
+- **Git & GitHub** — Control de versiones y despliegue online (GitHub Pages).
+
+---
+
+## 📁 Estructura del Proyecto
 
 El proyecto está estructurado de la siguiente manera:
 
@@ -36,41 +46,47 @@ El proyecto está estructurado de la siguiente manera:
 |-- images/
 | |-- foto-perfil.jpg # Foto de perfil
 | |-- certificados/ # Certificados obtenidos
+| |-- HojaDeVidaJUANDAVIDCIFUENTESL #CV
 |-- js/
 | |-- script.js # Código JavaScript para la interactividad
 
 
-## Instrucciones de Uso
+## 🚀 Cómo usar o ver el portafolio
 
-Para ver este proyecto en tu navegador, solo tienes que abrir el archivo `index.html` en cualquier navegador moderno. Si deseas modificar el contenido, abre los archivos HTML o CSS en tu editor de texto preferido y realiza los cambios que necesites.
-https://xxazraelxx.github.io/mi-pagina-web/
+- **Opción 1:** Haz clic aquí 👉 [Ver en línea (GitHub Pages)](https://xxazraelxx.github.io/mi-pagina-web/)
+- **Opción 2:** Descarga el repositorio y abre `index.html` en tu navegador favorito.
 
 ### Requisitos
 
-Este proyecto es completamente estático, por lo que no requiere un servidor ni un entorno de ejecución especial. Solo necesitas un navegador web para visualizarlo.
+Solo necesitas un navegador moderno. No se requiere servidor ni instalación especial.
 
-### Cómo ejecutar
+---
 
-1. Clona o descarga este repositorio en tu máquina local.
-2. Abre el archivo `index.html` en tu navegador.
-Segunda opcion: https://xxazraelxx.github.io/mi-pagina-web/
+## 🤝 Contribuciones
 
-## Contribuciones
-
-Si deseas contribuir a este proyecto, sigue estos pasos:
+¿Te gustaría sugerir mejoras o reportar un error?
 
 1. Haz un fork de este repositorio.
-2. Crea una rama para tu característica (`git checkout -b feature/nueva-funcionalidad`).
-3. Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`).
-4. Empuja la rama (`git push origin feature/nueva-funcionalidad`).
-5. Crea un pull request explicando los cambios.
+2. Crea una rama para tu cambio: `git checkout -b feature/nueva-funcionalidad`
+3. Haz commit de tus cambios.
+4. Haz push a tu rama.
+5. Abre un Pull Request.
 
-## Licencia
+---
+
+## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
 
-## Contacto
+---
 
-Correo electrónico: [juandavidcifuenteslectamo@gmail.com](mailto:juandavidcifuenteslectamo@gmail.com)  
-Teléfono: [3226212156]
+## 📬 Contacto
+
+- **Correo:** [juandavidcifuenteslectamo@gmail.com](mailto:juandavidcifuenteslectamo@gmail.com)
+- **Teléfono:** 3226212156
+- **Ciudad:** Cali, Colombia
+
+---
+
+> **¡Gracias por visitar mi portafolio!**
 
