@@ -12,90 +12,102 @@
   <header>
     <nav class="container" aria-label="Main navigation">
       <a href="index.html" class="logo">Mi Presentación</a>
-      <div class="nav-links">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="nav-links" id="navLinks">
         <a href="#about">Sobre mí</a>
         <a href="#education">Educación</a>
         <a href="#achievements">Certificados</a>
         <a href="#technologies">Tecnologías</a>
+        <a href="#contacto">Contacto</a>
       </div>
     </nav>
   </header>
 
   <main class="container" tabindex="-1">
     <!-- Sección Sobre mí -->
-    <section id="about" aria-label="Información personal">
+    <section id="about" class="animate fade-in-up" aria-label="Información personal">
       <div class="about-text">
         <h1>Mi Presentación Personal</h1>
         <p>
           PRACTICANTE DE INGENIERÍA DE SISTEMAS <strong>[JUAN DAVID CIFUENTES]</strong>. Estudiante de ingeniería de sistemas, comprometido con
-          mi crecimiento profesional. Destaco por mi habilidad paraescuchar activamente y aprender rápidamente. Enfocado y con conocimientos sólidos en tecnologías
+          mi crecimiento profesional. Destaco por mi habilidad para escuchar activamente y aprender rápidamente. Enfocado y con conocimientos sólidos en tecnologías
           emergentes, desarrollo de software y administración de
           sistemas. Tengo una alta capacidad de adaptación y
           aprendizaje rápido, que aplico constantemente para
           superar desafíos académicos y laborales.
-          <br />
-          <br />
-          <strong>Contacto:</strong>
-          <p>
-            Correo electrónico: <a href="mailto:juandavidcifuenteslectamo@gmail.com">juandavidcifuenteslectamo@gmail.com</a><br />
-            Teléfono: [3226212156]
-          </p>
         </p>
+        <div class="contact-block">
+          <strong>Info:</strong><br />
+          <a href="mailto:juandavidcifuenteslectamo@gmail.com">
+            <span class="icon">&#9993;</span> juandavidcifuenteslectamo@gmail.com
+          </a>
+          <br />
+          <span class="icon">&#128222;</span> 3226212156
+          <br />
+          <span class="icon">&#127968;</span> Cali, Colombia
+          <br />
+          <a href="images/HojaDeVidaJUANDAVIDCIFUENTESL.pdf" download class="btn-back" style="margin: 1.5rem auto 0 auto; display:block; width:max-content;">Descargar CV</a>
+        </div>
       </div>
       <div class="photo" aria-label="Foto personal">
-        <!-- Usando la imagen subida para el perfil, ajustada para ser más pequeña -->
-        <img src="images/foto-perfil.jpg" alt="Foto de [Tu Nombre]" />
+        <img src="images/foto-perfil.jpg" alt="Foto de Juan David Cifuentes" />
       </div>
     </section>
 
+    
+
     <!-- Sección Educación -->
-    <section id="education" aria-label="Sección de educación">
+    <section id="education" class="animate fade-in-up" aria-label="Sección de educación">
       <h2>Educación</h2>
-      <div class="cards">
+      <div class="cards education-cards">
         <article class="card" tabindex="0" role="region" aria-labelledby="edu1-title">
-          <h3 id="edu1-title"> Ingeniería de Sistemas</h3>
+          <h3 id="edu1-title">Ingeniería de Sistemas</h3>
           <p>Universidad Libre Seccional Cali<br />2022 - Actualidad</p>
         </article>
         <article class="card" tabindex="0" role="region" aria-labelledby="edu2-title">
-          <h3 id="edu2-title"> MANTENIMIENTO DE LOS MOTORES</h3>
+          <h3 id="edu2-title">Mantenimiento de los Motores</h3>
           <p>Servicio de Aprendizaje Nacional SENA<br />2021</p>
         </article>
-        <article class="card" tabindex="0" role="region" aria-labelledby="edu2-title">
-          <h3 id="edu2-title">Bachiller tecnico especialidad mecanica industrial</h3>
-          <p> Institucion Educativa Carlos Holguin Lloreda<br />2020</p>
+        <article class="card" tabindex="0" role="region" aria-labelledby="edu3-title">
+          <h3 id="edu3-title">Bachiller Técnico (Mecánica Industrial)</h3>
+          <p>Institución Educativa Carlos Holguín Lloreda<br />2020</p>
         </article>
       </div>
     </section>
 
-    <!-- Sección Logros y Cursos -->
-    <section id="achievements" aria-label="Certificados y cursos">
-      <h2>Logros y Cursos</h2>
-      <div class="cards">
+    
+
+    <!-- Sección Certificados y Estudios -->
+    <section id="achievements" class="animate fade-in-up" aria-label="Certificados y cursos">
+      <h2>Certificados y Estudios</h2>
+      <div class="cards achievement-cards">
         <a href="codeFirebase.html" class="card-link" aria-describedby="ach1-desc">
           <h3 id="ach1-title">Estudio de Firebase</h3>
-          <p id="ach1-desc">Realizado primer semestre del 2025, para la implementacion de autenticacion y base de datos en la nubre proyecto programacion movil.</p>
+          <p id="ach1-desc">Primer semestre 2025, autenticación y base de datos en la nube, proyecto programación móvil.</p>
         </a>
         <a href="codeOracle.html" class="card-link" aria-describedby="ach2-desc">
-          <h3 id="ach2-title">Curso Oracle Database Administrator</h3>
-          <p id="ach2-desc">Completado con exito el 9 de mayo del 2024. Database Desing de Oracle.</p>
+          <h3 id="ach2-title">Oracle Database Administrator</h3>
+          <p id="ach2-desc">Completado el 9 mayo 2024. Database Design con Oracle.</p>
         </a>
         <a href="codeNET.html" class="card-link" aria-describedby="ach3-desc">
-          <h3 id="ach3-title">Creación de aplicaciones en .NET con C# - For Microsoft</h3>
-          <p id="ach3-desc">Completado con exito el 3 de mayo del 2024. Creacion de Aplicaciones en .NET y C#.</p>
+          <h3 id="ach3-title">Aplicaciones .NET con C#</h3>
+          <p id="ach3-desc">Completado el 3 mayo 2024. Desarrollo en .NET y C#.</p>
         </a>
         <a href="codeCisco.html" class="card-link" aria-describedby="ach4-desc">
-          <h3 id="ach4-title">Networking Devices and Basic Configuration - Cisco Networking Academy</h3>
-          <p id="ach4-desc">Completado con exito el 19 de abril del 2025. Networking Devices and Basic Configuration for Cisco.</p>
+          <h3 id="ach4-title">Networking Devices - Cisco Academy</h3>
+          <p id="ach4-desc">Completado el 19 abril 2025. Networking Devices and Basic Configuration.</p>
         </a>
         <a href="codeAlgarth.html" class="card-link" aria-describedby="ach5-desc">
           <h3 id="ach5-title">Semillero Algar Tech</h3>
-          <p id="ach5-desc">Participación en espacio formativo colaborativo de desarrollo tecnológico. Fecha de inicio 6 de mayo 2024 a el 24 de mayo del 2024</p>
+          <p id="ach5-desc">Participación en desarrollo tecnológico, 6 mayo al 24 mayo 2024.</p>
         </a>
       </div>
     </section>
 
+    
+
     <!-- Sección Tecnologías que domino -->
-    <section id="technologies" aria-label="Tecnologías aprendidas">
+    <section id="technologies" class="animate fade-in-up" aria-label="Tecnologías aprendidas">
       <h2>Tecnologías que domino</h2>
       <div class="tech-grid">
         <div class="tech-card" tabindex="0" aria-label="Firebase">
@@ -136,26 +148,151 @@
         </div>
       </div>
     </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto" class="contact-section animate fade-in-up" aria-label="Formulario de contacto">
+      <h2>Contáctame</h2>
+      <form id="contactForm" action="https://formspree.io/f/xblyyrwv" method="POST" autocomplete="off">
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error-message"></span>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <span class="error-message"></span>
+        </div>
+        <button type="submit" class="btn-back" style="margin-top:1rem;">Enviar</button>
+        <div id="formStatus" style="margin-top:1rem; font-weight:600;"></div>
+      </form>
+    </section>
   </main>
+
+  <!-- Botón flotante "Volver arriba" -->
+  <button id="scrollTopBtn" title="Volver arriba">&#8679;</button>
+  <!-- Botón flotante modo oscuro -->
+  <button id="toggle-theme" aria-label="Cambiar modo oscuro/claro" title="Cambiar modo oscuro"></button>
 
   <!-- Footer -->
   <footer>
-    &copy; 2024 [JUAN DAVID CIFUENTES LECTAMO]. Todos los derechos reservados.
+    &copy; 2024 JUAN DAVID CIFUENTES LECTAMO. Todos los derechos reservados.
   </footer>
   
-  <!-- Enlace al archivo de JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- JS Navegación, animaciones, modo oscuro y validación de formulario -->
   <script>
-  // Detectar el scroll y cambiar el color de fondo del encabezado
-  window.addEventListener('scroll', function () {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) { // Cuando el scroll es mayor a 50px
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
+    // Navbar Responsive
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
+    // Animación de entrada
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate');
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) el.classList.add('show');
+      });
+    }
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('DOMContentLoaded', animateOnScroll);
+
+    // Volver arriba
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.onscroll = function () {
+      scrollBtn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
+      // Header glass effect
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    scrollBtn.onclick = function () {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    // Modo oscuro
+    const themeBtn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    function setDark(enabled) {
+      document.body.classList.toggle('dark-mode', enabled);
+      themeBtn.innerHTML = enabled ? '☀️' : '🌙';
+      themeBtn.title = enabled ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+      localStorage.setItem('darkMode', enabled ? '1' : '0');
+    }
+    themeBtn.addEventListener('click', () =>
+      setDark(!document.body.classList.contains('dark-mode'))
+    );
+    window.addEventListener('DOMContentLoaded', () => {
+      const dark = localStorage.getItem('darkMode');
+      setDark(dark ? dark === '1' : prefersDark);
+    });
+
+
+    // Validación de formulario
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+        status.textContent = '';
+        // Validación local
+        form.querySelectorAll('.form-group').forEach(group => {
+          const input = group.querySelector('input, textarea');
+          const error = group.querySelector('.error-message');
+          if (!input.value.trim()) {
+            error.textContent = 'Este campo es obligatorio';
+            valid = false;
+          } else if (input.type === 'email' && !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(input.value)) {
+            error.textContent = 'Correo electrónico inválido';
+            valid = false;
+          } else {
+            error.textContent = '';
+          }
+        });
+        // Si todo es válido, enviamos a Formspree
+        if (valid) {
+          status.textContent = 'Enviando...';
+          status.style.color = '#2563eb';
+          const data = new FormData(form);
+          fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              status.textContent = '¡Mensaje enviado correctamente!';
+              status.style.color = '#16a34a';
+              form.reset();
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.textContent = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                  status.textContent = "Error al enviar, intenta de nuevo.";
+                }
+                status.style.color = "#dc2626";
+              });
+            }
+          }).catch(() => {
+            status.textContent = "Error al enviar, verifica tu conexión.";
+            status.style.color = "#dc2626";
+          });
+        } else {
+          status.textContent = 'Por favor corrige los errores.';
+          status.style.color = '#dc2626';
+        }
+      });
+    });
+
+  </script>
 </body>
 </html>

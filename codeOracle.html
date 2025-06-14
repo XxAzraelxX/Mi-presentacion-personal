@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Detalle: Curso Oracle Database Administrator</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle: Curso Oracle Database Administrator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
   <header>
     <nav aria-label="Navegación principal">
       <a href="index.html" class="logo" aria-label="Volver a página principal">Mi Presentación</a>
       <div class="nav-links">
-        <a href="index.html#about">Sobre mí</a>
-        <a href="index.html#education">Educación</a>
-        <a href="index.html#achievements">Logros</a>
-        <a href="index.html#technologies">Tecnologías</a>
+        <a href="index.html#achievements">Certificados</a>
+        <a href="index.html#contacto">Contacto</a>
       </div>
     </nav>
   </header>
   <main>
     <article class="content-section" aria-labelledby="titulo-curso">
-      <div class="header-title">
-        <img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" alt="Logo Oracle" />
-        <h1 id="titulo-curso">Curso Oracle Database Administrator</h1>
+      <div class="header-title" style="display:flex; flex-direction:column; align-items:center; gap:1.3rem; margin-bottom:1.8rem;">
+        <img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" alt="Logo Oracle" style="max-width: 80px; max-height: 80px;" />
+        <h1 id="titulo-curso" style="text-align:center;">Curso Oracle Database Design</h1>
       </div>
-      <p>Completado en mayo 2024. Este curso ofrecido por Oracle Academy ha proporcionado una comprensión profunda y aplicada de los principios y prácticas de diseño de bases de datos. 
-        Por medio del abarque de los siguientes temas:</p>
-      <ul>
-        <li>Instalación, configuración y mantenimiento de bases de datos Oracle.</li>
-        <li>Seguridad y gestión de usuarios.</li>
-        <li>Optimización del rendimiento y tuning de consultas.</li>
-        <li>Respaldo, recuperación y gestión de incidencias.</li>
-        <li>Automatización de tareas administrativas mediante scripts y herramientas.</li>
-      </ul>
-      <p>Gracias a este curso, aprendi a aplicar conceptos fundamentales como la normalización de bases de datos, la creación de esquemas adecuados y la implementación de relaciones entre tablas. 
-        Además, me adentro en el uso de herramientas avanzadas para garantizar la integridad y seguridad de los datos, aspectos esenciales para cualquier infraestructura de bases de datos 
-        en entornos empresariales. Mejorando sustancialmente la gestión y disponibilidad de bases de datos críticas en diversos entornos.</p>
-      <section class="certificate" aria-label="Certificado del curso">
-        <h2>Certificado Obtenido</h2>
-        <!-- Usamos la imagen que has subido -->
-        <img src="images/certificado-oracle.jpg" alt="Certificado del Curso Oracle Database Administrator" />
+      
+        <p style="font-size:1.07rem; margin-bottom:1.2rem;">
+          Completado en mayo 2024. Este curso ofrecido por Oracle Academy ha proporcionado una comprensión profunda y aplicada de los principios y prácticas de diseño de bases de datos. 
+          Por medio del abarque de los siguientes temas:
+        </p>
+        <ul style="margin-bottom:1.4rem;">
+          <li>Instalación, configuración y mantenimiento de bases de datos Oracle.</li>
+          <li>Seguridad y gestión de usuarios.</li>
+          <li>Optimización del rendimiento y tuning de consultas.</li>
+          <li>Respaldo, recuperación y gestión de incidencias.</li>
+          <li>Automatización de tareas administrativas mediante scripts y herramientas.</li>
+        </ul>
+        <p style="font-size:1.07rem;">
+          Gracias a este curso, aprendí a aplicar conceptos fundamentales como la normalización de bases de datos, la creación de esquemas adecuados y la implementación de relaciones entre tablas. 
+          Además, me adentré en el uso de herramientas avanzadas para garantizar la integridad y seguridad de los datos, aspectos esenciales para cualquier infraestructura de bases de datos 
+          en entornos empresariales. Mejorando sustancialmente la gestión y disponibilidad de bases de datos críticas en diversos entornos.
+        </p>
+      
+      <section class="certificate" aria-label="Certificado del curso" style="margin:2.5rem auto 2.2rem auto; max-width:670px; box-shadow:0 4px 24px #2563eb18; border-radius:12px; background:#fff;">
+        <h2 style="font-size:1.25rem; font-weight:700; margin:1.3rem 0 1.3rem 0; text-align:center;">Certificado Obtenido</h2>
+        <img src="images/certificado-oracle.jpg" alt="Certificado del Curso Oracle Database Administrator" 
+          style="width:100%; max-width:640px; height:auto; display:block; margin:0 auto 1.7rem auto; border-radius:8px; box-shadow:0 2px 16px #6b728016; border:1.5px solid #eee;" />
       </section>
-      <!-- Botón para volver a la página principal -->
-      <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      <div style="width:100%; display:flex; justify-content:center; margin:2.5rem 0 0 0;">
+        <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      </div>
     </article>
   </main>
+  
+  <!-- Header efecto al hacer scroll -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  
+  <!-- Botón y script de modo oscuro -->
+  <button id="toggle-theme" aria-label="Cambiar modo oscuro/claro" title="Cambiar modo oscuro"></button>
+  <script>
+    const themeBtn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setDark(enabled) {
+      document.body.classList.toggle('dark-mode', enabled);
+      themeBtn.innerHTML = enabled ? '☀️' : '🌙';
+      themeBtn.title = enabled ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+      localStorage.setItem('darkMode', enabled ? '1' : '0');
+    }
+    themeBtn.addEventListener('click', () =>
+      setDark(!document.body.classList.contains('dark-mode'))
+    );
+    window.addEventListener('DOMContentLoaded', () => {
+      const dark = localStorage.getItem('darkMode');
+      setDark(dark ? dark === '1' : prefersDark);
+    });
+  </script>
 </body>
 </html>

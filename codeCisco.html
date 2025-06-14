@@ -12,35 +12,73 @@
     <nav aria-label="Navegación principal">
       <a href="index.html" class="logo" aria-label="Volver a página principal">Mi Presentación</a>
       <div class="nav-links">
-        <a href="index.html#about">Sobre mí</a>
-        <a href="index.html#education">Educación</a>
-        <a href="index.html#achievements">Logros</a>
-        <a href="index.html#technologies">Tecnologías</a>
+        <a href="index.html#achievements">Certificados</a>
+        <a href="index.html#contacto">Contacto</a>
       </div>
     </nav>
   </header>
   <main>
     <article class="content-section" aria-labelledby="titulo-curso">
-      <div class="header-title">
-        <!-- Logo de Cisco desde una fuente externa -->
-        <img src="https://1000marcas.net/wp-content/uploads/2020/03/logo-Cisco.png" alt="Logo Cisco Networking Academy" />
-        <h1 id="titulo-curso">Networking Devices and Basic Configuration - Cisco Networking Academy</h1>
+      <div class="header-title" style="display:flex; flex-direction:column; align-items:center; gap:1.3rem; margin-bottom:1.8rem;">
+        <!-- Logo Cisco -->
+        <img src="https://1000marcas.net/wp-content/uploads/2020/03/logo-Cisco.png" alt="Logo Cisco Networking Academy" style="max-width: 120px; max-height: 70px; background:#fff; border-radius: 8px; box-shadow:0 2px 8px #2563eb18;" />
+        <h1 id="titulo-curso" style="text-align:center;">Networking Devices and Basic Configuration<br>Cisco Networking Academy</h1>
       </div>
-      <p>Completado en abril del 2025. Este curso de Cisco Networking Academy cubre los principios fundamentales y configuración básica de dispositivos de red, abarcando:</p>
-      <ul>
-        <li>Conceptos fundamentales de redes y protocolos.</li>
-        <li>Dispositivos de red: routers, switches y firewalls.</li>
-        <li>Configuración básica y gestión de dispositivos Cisco.</li>
-        <li>Introducción a la seguridad y métodos de protección en red.</li>
-        <li>Prácticas de laboratorio para configuración y troubleshooting.</li>
-      </ul>
-      <p>Gracias a este curso, adquirí conocimientos prácticos para configurar, gestionar y solucionar problemas en redes empresariales básicas. Y me ha preparado para en el futuro abordar retos más avanzados en redes y administrar infraestructuras de red de manera efectiva.</p>
-      <section class="certificate" aria-label="Certificado del curso">
-        <h2>Certificado Obtenido</h2>
-        <img src="images/certificado-cisco.jpg" alt="Certificado del curso de Networking Devices and Basic Configuration" />
+      
+        <p style="font-size:1.07rem; margin-bottom:1.2rem;">
+          Completado en abril del 2025. Este curso de Cisco Networking Academy cubre los principios fundamentales y configuración básica de dispositivos de red, abarcando:
+        </p>
+        <ul style="margin-bottom:1.4rem;">
+          <li>Conceptos fundamentales de redes y protocolos.</li>
+          <li>Dispositivos de red: routers, switches y firewalls.</li>
+          <li>Configuración básica y gestión de dispositivos Cisco.</li>
+          <li>Introducción a la seguridad y métodos de protección en red.</li>
+          <li>Prácticas de laboratorio para configuración y troubleshooting.</li>
+        </ul>
+        <p style="font-size:1.07rem;">
+          Gracias a este curso, adquirí conocimientos prácticos para configurar, gestionar y solucionar problemas en redes empresariales básicas. Me ha preparado para abordar retos más avanzados en redes y administrar infraestructuras de red de manera efectiva.
+        </p>
+      
+      <section class="certificate" aria-label="Certificado del curso" style="margin:2.5rem auto 2.2rem auto; max-width:670px; box-shadow:0 4px 24px #2563eb18; border-radius:12px; background:#fff;">
+        <h2 style="font-size:1.25rem; font-weight:700; margin:1.3rem 0 1.3rem 0; text-align:center;">Certificado Obtenido</h2>
+        <img src="images/certificado-cisco.jpg" alt="Certificado del curso de Networking Devices and Basic Configuration"
+          style="width:100%; max-width:640px; height:auto; display:block; margin:0 auto 1.7rem auto; border-radius:8px; box-shadow:0 2px 16px #6b728016; border:1.5px solid #eee;" />
       </section>
-      <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      <div style="width:100%; display:flex; justify-content:center; margin:2.5rem 0 0 0;">
+        <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      </div>
     </article>
   </main>
+  <script>
+    // Detectar el scroll y cambiar el color de fondo del encabezado
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <!-- Botón y script de modo oscuro -->
+  <button id="toggle-theme" aria-label="Cambiar modo oscuro/claro" title="Cambiar modo oscuro"></button>
+  <script>
+    const themeBtn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setDark(enabled) {
+      document.body.classList.toggle('dark-mode', enabled);
+      themeBtn.innerHTML = enabled ? '☀️' : '🌙';
+      themeBtn.title = enabled ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+      localStorage.setItem('darkMode', enabled ? '1' : '0');
+    }
+    themeBtn.addEventListener('click', () =>
+      setDark(!document.body.classList.contains('dark-mode'))
+    );
+    window.addEventListener('DOMContentLoaded', () => {
+      const dark = localStorage.getItem('darkMode');
+      setDark(dark ? dark === '1' : prefersDark);
+    });
+  </script>
 </body>
 </html>

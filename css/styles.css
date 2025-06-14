@@ -1,16 +1,17 @@
-/* Establece variables de color y estilo global */
 :root {
   --color-primary: #111827;
   --color-secondary: #6b7280;
   --color-accent: #2563eb;
-  --color-bg: #ffffff;
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --border-radius: 0.75rem;
+  --color-bg: #f8fafc;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-glass: rgba(255,255,255,0.7);
+  --border-radius: 1.2rem;
   --transition-speed: 0.3s;
 }
 
-/* Reseteo y base de estilos */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -19,12 +20,12 @@ body {
   font-family: 'Poppins', sans-serif;
   background: var(--color-bg);
   color: var(--color-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 18px;
   scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
-/* Estilo para enlaces */
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -37,49 +38,53 @@ a:focus {
   outline: none;
 }
 
-/* Estilos para el encabezado */
+/* Header glassmorphism + sticky */
 header {
   position: sticky;
   top: 0;
-  background: var(--color-bg);
-  box-shadow: 0 2px 8px var(--color-shadow);
+  background: var(--color-glass);
+  box-shadow: 0 8px 32px var(--color-shadow);
   z-index: 1000;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.4s, backdrop-filter 0.3s;
+  backdrop-filter: blur(12px);
 }
 
 header.scrolled {
-  background-color: #2563eb;
+  background-color: rgba(37,99,235,0.82);
+  color: #fff;
+  backdrop-filter: blur(16px);
 }
 
 nav {
   max-width: 1200px;
   margin: 0 auto;
-  height: 64px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1.2rem;
 }
 
 .logo {
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  letter-spacing: 0.03em;
   color: var(--color-primary);
-  user-select: none;
+  text-shadow: 1px 2px 6px rgba(37,99,235,0.06);
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   font-weight: 600;
-  font-size: 1rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  font-size: 1.08rem;
+  padding: 0.32rem 0.8rem;
+  border-radius: 6px;
   transition: background-color var(--transition-speed), color var(--transition-speed);
+  position: relative;
 }
 
 .nav-links a:hover,
@@ -88,12 +93,46 @@ nav {
   color: white;
 }
 
-/* Estilos para el contenido */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: var(--color-primary);
+  padding: 0 0.5rem;
+}
+
+/* Responsive navbar */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -260px;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background: var(--color-glass);
+    box-shadow: -2px 0 12px var(--color-shadow);
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: flex-start;
+    padding: 2.5rem 1.2rem;
+    z-index: 999;
+    transition: right 0.35s;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* Main content */
 main {
-  max-width: 900px;
-  margin: 3rem auto 4rem auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 950px;
+  margin: 3.5rem auto 4rem auto;
+  padding: 0 1rem;
 }
 
 h1, h2, h3 {
@@ -102,62 +141,53 @@ h1, h2, h3 {
   color: var(--color-primary);
 }
 
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.1rem; margin-top: 1.8rem; }
+h3 { font-size: 1.18rem; font-weight: 700; }
 
 p {
-  margin: 0 0 1em 0;
+  margin: 0 0 1.1em 0;
   color: var(--color-secondary);
+  font-size: 1.1rem;
 }
 
-/* Estilos para secciones */
+.section-separator {
+  height: 1.8rem;
+  width: 100%;
+  border-bottom: 1.5px dashed #cbd5e1;
+  margin: 0 0 2.2rem 0;
+  opacity: 0.43;
+}
+
 section {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding: 2.3rem 0 2.8rem 0;
 }
 
-/* Estilos para la sección Sobre mí */
+/* Sobre mí */
 #about {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
   display: flex;
-  justify-content: space-between; /* Alineamos los elementos al lado */
+  justify-content: space-between;
   align-items: center;
-  gap: 10rem; /* Espacio entre el texto y la foto */
-  text-align: left; /* Alineamos el texto a la izquierda */
+  gap: 3.5rem;
+  flex-wrap: wrap;
 }
 
 #about .about-text {
-  max-width: 70%; /* Limitar el ancho del texto para que la foto no se sobreponga */
+  flex: 2;
+  min-width: 250px;
+  max-width: 62%;
 }
 
-#about p {
-  font-size: 1.125rem;
-  color: var(--color-secondary);
-  margin-top: 1.5rem;
-}
-
-/* Estilo para la foto de perfil */
 #about .photo {
   flex-shrink: 0;
-  width: 220px; /* Tamaño reducido de la foto */
-  height: 220px; /* Tamaño reducido de la foto */
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  box-shadow: 0 0 15px var(--color-shadow);
+  box-shadow: 0 0 20px 2px #2563eb22;
   overflow: hidden;
-  border: 4px solid var(--color-accent);
+  border: 5px solid #2563eb;
   background: #f3f4f6;
+  margin-right: 0;
 }
 
 #about .photo img {
@@ -167,126 +197,468 @@ section {
   display: block;
 }
 
-/* Estilo para las tarjetas (cards) de logros y cursos */
+/* Contacto */
+.contact-block {
+  margin-top: 1.5em;
+  background: #e0e7ff99;
+  padding: 1em 1.3em;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px #b8c4eb32;
+  font-size: 1.05rem;
+}
+
+.contact-block .icon {
+  font-size: 1.18em;
+  color: #2563eb;
+  margin-right: 0.42em;
+  vertical-align: middle;
+}
+
+.contact-block a {
+  font-weight: 600;
+  font-size: 1.06em;
+}
+
+/* Responsive sobre mí */
+@media (max-width: 800px) {
+  #about {
+    flex-direction: column-reverse;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+  #about .about-text { max-width: 100%; }
+  #about .photo { margin: 0 auto; }
+}
+
+/* Tarjetas generales */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 1.4rem;
+}
+
+.card,
 .card-link {
-  all: unset;
-  display: block;
-  background: var(--color-bg);
+  background: #fff;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 8px var(--color-shadow);
+  box-shadow: 0 2px 16px var(--color-shadow);
   padding: 1.5rem;
-  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+  min-width: 220px;
+  flex: 1 1 250px;
+  transition: box-shadow 0.22s, transform 0.22s;
   cursor: pointer;
   color: inherit;
   text-decoration: none;
-}
-
-.card-link:hover,
-.card-link:focus-visible {
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); /* Añadimos una sombra más grande al hacer hover */
-  transform: translateY(-4px); /* Efecto de "desplazamiento hacia arriba" al pasar el cursor */
-  outline: none;
-}
-
-/* Añadir el mismo efecto a los enlaces (para los logros) */
-.card {
-  background: var(--color-bg);
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 8px var(--color-shadow);
-  padding: 1.5rem;
-  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+  position: relative;
 }
 
 .card:hover,
-.card:focus-within {
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); /* Sombra adicional al hacer hover */
-  transform: translateY(-4px); /* Mismo efecto de movimiento en la tarjeta */
+.card:focus-within,
+.card-link:hover,
+.card-link:focus-visible {
+  box-shadow: 0 8px 32px #2563eb44;
+  transform: translateY(-8px) scale(1.03);
+  z-index: 2;
+  border: 1.5px solid #2563eb;
 }
 
-/* Estilos para las tarjetas de tecnologías */
-#technologies .tech-grid {
+/* Responsive cards */
+@media (max-width: 650px) {
+  .cards { flex-direction: column; gap: 1rem; }
+  .card, .card-link { min-width: 0; }
+}
+
+/* Education cards con icono (opcional, para mejorar: puedes agregar iconos SVG de estudios) */
+.education-cards .card {
+  border-left: 7px solid #2563eb44;
+}
+
+.achievement-cards .card-link {
+  border-left: 7px solid #84cc16a4;
+}
+
+/* Tecnologías grid */
+.tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 2rem;
   justify-items: center;
   align-items: center;
+  margin-top: 1.4rem;
 }
 
 .tech-card {
-  background: var(--color-bg);
+  background: #fff;
   border-radius: var(--border-radius);
-  box-shadow: 0 1px 6px var(--color-shadow);
-  padding: 1rem;
+  box-shadow: 0 1px 12px #2563eb22;
+  padding: 1.1rem;
   width: 110px;
   text-align: center;
   cursor: default;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  transition: transform 0.18s, box-shadow 0.18s;
+  border-bottom: 3px solid #2563eb34;
 }
 
 .tech-card:hover,
 .tech-card:focus-within {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+  transform: scale(1.10);
+  box-shadow: 0 8px 32px #2563eb60;
+  border-bottom: 3px solid #2563eb;
 }
+
 
 .tech-card img {
   max-width: 48px;
   max-height: 48px;
   object-fit: contain;
+  margin-bottom: 0.4em;
 }
 
 .tech-card span {
   font-weight: 600;
   color: var(--color-primary);
-  font-size: 1rem;
+  font-size: 1.01rem;
 }
 
-/* Mejora de interactividad en imágenes */
-.header-title img {
-  width: 120px;  /* Ajustamos el tamaño del logo */
-  height: auto;  /* Mantiene la proporción de la imagen */
-  object-fit: contain;
-  transition: filter var(--transition-speed);
-}
-
-.certificate img {
-  max-width: 100%; /* Hace que la imagen se ajuste al tamaño de su contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 20px var(--color-shadow);
-  border: 1px solid #ddd;
-}
-
-/* Botones de retorno */
-.btn-back {
-  display: inline-block;
-  background-color: #2563eb;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Botón "Volver arriba" */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 26px;
+  z-index: 90;
+  border: none;
+  outline: none;
+  background: #2563ebd2;
+  color: #fff;
   cursor: pointer;
+  padding: 0.86em 1.2em;
+  border-radius: 40px;
+  box-shadow: 0 2px 20px #2563eb43;
+  font-size: 2rem;
+  opacity: 0.8;
+  transition: background 0.3s, transform 0.16s;
 }
 
-.btn-back:hover,
-.btn-back:focus {
-  transform: scale(1.05);
-  background-color: #1e40af;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.6);
+#scrollTopBtn:hover {
+  background: #111827ee;
+  opacity: 1;
+  transform: scale(1.10);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.875rem;
+  padding: 2.2rem 1rem;
+  font-size: 0.95rem;
   color: var(--color-secondary);
-  border-top: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  border-top: 1.5px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.07);
+  letter-spacing: 0.01em;
 }
+
+/* Animaciones de entrada */
+.animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.75s cubic-bezier(.17,.67,.83,.67);
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+header.scrolled .nav-links a {
+  color: #fff; /* Cambia el color del texto cuando el fondo se vuelve oscuro */
+}
+
+/* Tamaño correcto para logos en cabeceras (por ejemplo, C#) */
+.header-title img {
+  display: block;
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  margin-bottom: 1.4rem;
+  margin-left: 0;
+  margin-right: 1.2rem;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(37,99,235,0.07);
+}
+@media (max-width: 650px) {
+  .header-title img {
+    max-width: 90px;
+    max-height: 90px;
+    margin-bottom: 1rem;
+  }
+}
+/* Foto de perfil mejorada */
+#about .photo {
+  flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 28px 2px #2563eb22;
+  overflow: hidden;
+  border: 6px solid #2563eb;
+  background: #f3f4f6;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  #about .photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+/* Menú visible con header scrolled */
+header.scrolled .nav-links a,
+header.scrolled .logo {
+  color: #fff !important;
+}
+header.scrolled .nav-links a:hover,
+header.scrolled .nav-links a:focus {
+  background: #fff;
+  color: #2563eb !important;
+}
+/* Ajuste global para imágenes de tecnologías */
+.tech-card img {
+  max-width: 48px !important;
+  max-height: 48px !important;
+  object-fit: contain;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tech-card img {
+  display: block;
+  margin-bottom: 0.4em;
+}
+.tech-card span {
+  display: block;
+  margin-top: 0.2em;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.contact-section {
+  max-width: 520px;
+  margin: 3rem auto 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 18px #2563eb18;
+  padding: 2rem 1.4rem 2.5rem 1.4rem;
+}
+.contact-section h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 1.3rem;
+}
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  display: block;
+}
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 7px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.2s;
+  outline: none;
+  margin-top: 0.2em;
+  box-sizing: border-box;
+}
+.form-group input:focus, .form-group textarea:focus {
+  border: 1.5px solid #2563eb;
+}
+.error-message {
+  color: #dc2626;
+  font-size: 0.94em;
+  margin-top: 0.2em;
+  display: block;
+  min-height: 20px;
+}
+
+#toggle-theme {
+  position: fixed;
+  bottom: 30px;
+  left: 26px;
+  z-index: 100;
+  background: #2563ebd2;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.86em 1.2em;
+  border-radius: 40px;
+  box-shadow: 0 2px 20px #2563eb43;
+  font-size: 2rem;
+  opacity: 0.8;
+  transition: background 0.3s, transform 0.16s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#toggle-theme:hover {
+  background: #111827ee;
+  opacity: 1;
+  transform: scale(1.10);
+}
+body.dark-mode #toggle-theme {
+  background: #181d26;
+  color: #ffe662;
+}
+
+/* Dark mode styles */
+
+body.dark-mode {
+  background: #181d26 !important;
+  color: #e3e3e3 !important;
+}
+
+/* Fondo de secciones, main y tarjetas más claro en modo oscuro */
+body.dark-mode main,
+body.dark-mode section,
+body.dark-mode .contact-section,
+body.dark-mode .card,
+body.dark-mode .card-link,
+body.dark-mode .tech-card,
+body.dark-mode .certificate {
+  background: #181d26 !important;  /* Más claro que el fondo general */
+  color: #e3e3e3 !important;
+  border: 1.5px solid #262a3e !important;
+  box-shadow: 0 4px 24px #0008;
+}
+
+/* Bordes y sombras más visibles */
+body.dark-mode .card,
+body.dark-mode .card-link,
+body.dark-mode .tech-card {
+  box-shadow: 0 6px 30px #000b !important;
+  border-radius: 1.2rem !important;
+}
+
+/* Contraste para textos secundarios */
+body.dark-mode p,
+body.dark-mode .contact-block,
+body.dark-mode .section-separator,
+body.dark-mode .form-group label {
+  color: #fff !important;
+}
+body.dark-mode .section-separator {
+  border-bottom: 1.5px dashed #424454;
+  opacity: 0.6;
+}
+
+/* Títulos y texto principal más claros */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3,
+body.dark-mode .logo {
+  color: #f5f6fa !important;
+}
+
+/* Botón volver y botón modo oscuro */
+body.dark-mode .btn-back,
+body.dark-mode #toggle-theme {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+
+/* Cards con borde lateral visible y destacado */
+body.dark-mode .education-cards .card {
+  border-left: 7px solid #466ff5a4 !important;
+}
+body.dark-mode .achievement-cards .card-link {
+  border-left: 7px solid #5bdc8b8f !important;
+}
+
+/* Cards de tecnologías */
+body.dark-mode .tech-card {
+  background: #20243c !important;
+  border-bottom: 3px solid #3056a6 !important;
+}
+body.dark-mode .tech-card span {
+  color: #e3e3e3 !important;
+}
+
+/* Fondo de input/form en modo oscuro */
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background: #222738 !important;
+  color: #e3e3e3 !important;
+  border-color: #344363 !important;
+}
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+  border: 1.5px solid #5ea6fa !important;
+}
+
+/* Contact block (info) */
+body.dark-mode .contact-block {
+  background: #232847 !important;
+  color: #e3e3e3 !important;
+  box-shadow: 0 2px 10px #0006;
+}
+
+body.dark-mode header {
+  background: #232846 !important;
+  color: #e3e3e3 !important;
+  backdrop-filter: blur(12px);
+}
+body.dark-mode header.scrolled {
+  background-color: #232846 !important;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2563eb25;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  text-align: center;
+  text-decoration: none !important;
+  outline: none;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+  background: #1746b7;
+  color: #ffe662 !important;
+  transform: translateY(-2px) scale(1.04);
+  text-decoration: none;
+}
+
+body.dark-mode .btn-back {
+  background: #2563eb !important;
+  color: #fff !important;
+}
+
+body.dark-mode .btn-back:hover,
+body.dark-mode .btn-back:focus {
+  background: #1746b7 !important;
+  color: #ffe662 !important;
+}
+
+
+
+

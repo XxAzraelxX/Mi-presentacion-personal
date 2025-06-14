@@ -12,30 +12,67 @@
     <nav aria-label="Navegación principal">
       <a href="index.html" class="logo" aria-label="Volver a página principal">Mi Presentación</a>
       <div class="nav-links">
-        <a href="index.html#about">Sobre mí</a>
-        <a href="index.html#education">Educación</a>
-        <a href="index.html#achievements">Logros</a>
-        <a href="index.html#technologies">Tecnologías</a>
+        <a href="index.html#achievements">Certificados</a>
+        <a href="index.html#contacto">Contacto</a>
       </div>
     </nav>
   </header>
   <main>
     <article class="content-section" aria-labelledby="titulo-curso">
-      <div class="header-title">
-        <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Logo Firebase" />
-        <h1 id="titulo-curso">Curso Avanzado de Firebase</h1>
+      <div class="header-title" style="display:flex; flex-direction:column; align-items:center; gap:1.3rem; margin-bottom:1.8rem;">
+        <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Logo Firebase" style="max-width: 80px; max-height: 80px;" />
+        <h1 id="titulo-curso" style="text-align:center;">Estudio de Firebase</h1>
       </div>
-      <p>Completado en el primer semestre del 2025. Se llevo acabo un estudio sobre Firebase cubriendo diversos aspectos avanzados del desarrollo con Firebase, incluyendo:</p>
-      <ul>
-        <li>Autenticación de usuarios y gestión de sesiones, por google y correo electrónico.</li>
-        <li>Uso de Firebase Realtime Database y Cloud Firestore.</li>
-        <li>Implementación de notificaciones push con Firebase Cloud Messaging.</li>
-        <li>Gestión de usuarios y control de acceso con Firebase Authentication.</li>
-        <li>Implementación de Firebase Analytics para el análisis de aplicaciones móviles.</li>
-      </ul>
-      <p>Gracias a este estudio, adquirí conocimientos necesarios para integrar Firebase en aplicaciones móviles y mejorar su rendimiento y escalabilidad.</p>
-      <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      
+        <p style="font-size:1.07rem; margin-bottom:1.2rem;">
+          El primer semestre del 2025, se llevó a cabo un estudio sobre Firebase cubriendo diversos aspectos avanzados del desarrollo con Firebase, incluyendo:
+        </p>
+        <ul style="margin-bottom:1.4rem;">
+          <li>Autenticación de usuarios y gestión de sesiones (Google y correo electrónico).</li>
+          <li>Uso de Firebase Realtime Database y Cloud Firestore.</li>
+          <li>Implementación de notificaciones push con Firebase Cloud Messaging.</li>
+          <li>Gestión de usuarios y control de acceso con Firebase Authentication.</li>
+          <li>Implementación de Firebase Analytics para el análisis de aplicaciones móviles.</li>
+        </ul>
+        <p style="font-size:1.07rem;">
+          Gracias a este estudio, adquirí conocimientos necesarios para integrar Firebase en aplicaciones móviles, mejorar su rendimiento y escalabilidad.
+        </p>
+      
+      <div style="width:100%; display:flex; justify-content:center; margin:2.5rem 0 0 0;">
+        <a href="index.html" class="btn-back" role="button" aria-label="Volver a la página principal">← Volver</a>
+      </div>
     </article>
   </main>
+  <script>
+    // Detectar el scroll y cambiar el color de fondo del encabezado
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <!-- Botón y script de modo oscuro -->
+  <button id="toggle-theme" aria-label="Cambiar modo oscuro/claro" title="Cambiar modo oscuro"></button>
+  <script>
+    const themeBtn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function setDark(enabled) {
+      document.body.classList.toggle('dark-mode', enabled);
+      themeBtn.innerHTML = enabled ? '☀️' : '🌙';
+      themeBtn.title = enabled ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+      localStorage.setItem('darkMode', enabled ? '1' : '0');
+    }
+    themeBtn.addEventListener('click', () =>
+      setDark(!document.body.classList.contains('dark-mode'))
+    );
+    window.addEventListener('DOMContentLoaded', () => {
+      const dark = localStorage.getItem('darkMode');
+      setDark(dark ? dark === '1' : prefersDark);
+    });
+  </script>
 </body>
 </html>
