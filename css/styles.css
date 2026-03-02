@@ -167,7 +167,7 @@ section {
 #about {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 3.5rem;
   flex-wrap: wrap;
 }
@@ -530,8 +530,6 @@ body.dark-mode {
 }
 
 /* Fondo de secciones, main y tarjetas más claro en modo oscuro */
-body.dark-mode main,
-body.dark-mode section,
 body.dark-mode .contact-section,
 body.dark-mode .card,
 body.dark-mode .card-link,

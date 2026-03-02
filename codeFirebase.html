@@ -43,36 +43,8 @@
       </div>
     </article>
   </main>
-  <script>
-    // Detectar el scroll y cambiar el color de fondo del encabezado
-    window.addEventListener('scroll', function () {
-      const header = document.querySelector('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  </script>
   <!-- Botón y script de modo oscuro -->
   <button id="toggle-theme" aria-label="Cambiar modo oscuro/claro" title="Cambiar modo oscuro"></button>
-  <script>
-    const themeBtn = document.getElementById('toggle-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    function setDark(enabled) {
-      document.body.classList.toggle('dark-mode', enabled);
-      themeBtn.innerHTML = enabled ? '☀️' : '🌙';
-      themeBtn.title = enabled ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
-      localStorage.setItem('darkMode', enabled ? '1' : '0');
-    }
-    themeBtn.addEventListener('click', () =>
-      setDark(!document.body.classList.contains('dark-mode'))
-    );
-    window.addEventListener('DOMContentLoaded', () => {
-      const dark = localStorage.getItem('darkMode');
-      setDark(dark ? dark === '1' : prefersDark);
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
