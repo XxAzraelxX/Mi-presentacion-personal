@@ -2,7 +2,7 @@
 
 Este es mi portafolio web personal, diseñado para mostrar mi trayectoria profesional, educación, logros, habilidades y contacto. El objetivo es ofrecer una experiencia moderna y accesible a cualquier persona interesada en conocer mi perfil profesional.
 
-> **🌐 [¡Ver portafolio online aquí!](https://xxazraelxx.github.io/mi-pagina-web/)**
+> **🌐 [¡Ver portafolio online aquí!](https://xxazraelxx.github.io/Mi-presentacion-personal/)**
 
 ---
 
@@ -53,7 +53,7 @@ El proyecto está estructurado de la siguiente manera:
 
 ## 🚀 Cómo usar o ver el portafolio
 
-- **Opción 1:** Haz clic aquí 👉 [Ver en línea (GitHub Pages)](https://xxazraelxx.github.io/mi-pagina-web/)
+- **Opción 1:** Haz clic aquí 👉 [Ver en línea (GitHub Pages)](https://xxazraelxx.github.io/Mi-presentacion-personal/)
 - **Opción 2:** Descarga el repositorio y abre `index.html` en tu navegador favorito.
 
 ### Requisitos
